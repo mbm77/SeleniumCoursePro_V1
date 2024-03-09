@@ -11,6 +11,7 @@
       <class name="tests.NDTVWeatherTest"/>
       <class name="tests.ReadTextFromBarcodeTest"/>
       <class name="tests.ETMoneyTest"/> -->
+      
       <class name="tests.MyntraTest"/>
     </classes>
   </test> <!-- Test -->
