@@ -40,6 +40,7 @@ public class MyntraTest {
 			
 			EdgeOptions options = new EdgeOptions();
 			options.addArguments("--disable-notifications");
+			options.addArguments("user-data-dir=C:\\Users\\user\\AppData\\Local\\Microsoft\\Edge\\User Data2");
 			System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"/executables/msedgedriver.exe");
 			//WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver(options);
