@@ -37,10 +37,10 @@ public class MyntraTest {
 			options.addArguments("--disable-notifications");
 			driver = new ChromeDriver(options);
 		} else if (browserName.equalsIgnoreCase("edge")) {
-			//WebDriverManager.edgedriver().setup();
-			System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"/executables/msedgedriver.exe");
+			
 			EdgeOptions options = new EdgeOptions();
 			options.addArguments("--disable-notifications");
+			//System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"/executables/msedgedriver.exe");
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver(options);
 		} else if (browserName.equalsIgnoreCase("firefox")) {
