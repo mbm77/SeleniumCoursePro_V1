@@ -43,9 +43,9 @@ public class MyntraTest {
 			options.addArguments("--disable-dev-shm-usage");
 			options.addArguments("--headless");
 			options.addArguments("--disable-notifications");
-			options.addArguments("user-data-dir=C:\\Users\\user\\AppData\\Local\\Microsoft\\Edge\\User Data2");
-			System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"/executables/msedgedriver.exe");
-			//WebDriverManager.edgedriver().setup();
+			//options.addArguments("user-data-dir=C:\\Users\\user\\AppData\\Local\\Microsoft\\Edge\\User Data2");
+			//System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"/executables/msedgedriver.exe");
+			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver(options);
 		} else if (browserName.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
