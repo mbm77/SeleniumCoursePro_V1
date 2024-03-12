@@ -42,6 +42,7 @@ public class MyntraTest {
 			options.addArguments("--no-sandbox");
 			options.addArguments("--disable-dev-shm-usage");
 			options.addArguments("--headless");
+			options.addArguments("--crash-dumps-dir=/tmp");
 			options.addArguments("--disable-notifications");
 			//options.addArguments("user-data-dir=C:\\Users\\user\\AppData\\Local\\Microsoft\\Edge\\User Data2");
 			//System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"/executables/msedgedriver.exe");
