@@ -34,7 +34,7 @@ public class MyntraTest {
 			options.addArguments("--disable-notifications");
 			driver = new ChromeDriver(options);
 		} else if (browserName.equalsIgnoreCase("edge")) {
-			WebDriverManager.chromedriver().setup();
+			WebDriverManager.edgedriver().setup();
 			EdgeOptions options = new EdgeOptions();
 			options.addArguments("--disable-notifications");
 			WebDriverManager.edgedriver().setup();
