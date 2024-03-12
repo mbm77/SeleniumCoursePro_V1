@@ -79,10 +79,8 @@ public class MyntraTest {
 			}
 		}
 
-		// Assert.assertEquals(items, 3652, "No of Items mismatched");
 		String currentUrl = driver.getCurrentUrl();
-		// Assert.assertTrue(currentUrl.contains("men-tshirts?f=Brand%3AHERE%26NOW%2CHRX%20by%20Hrithik%20Roshan"),
-		// "URL not contains given string");
+		
 		Uninterruptibles.sleepUninterruptibly(Duration.ofSeconds(2));
 		driver.quit();
 	}
