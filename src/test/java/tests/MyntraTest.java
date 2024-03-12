@@ -4,6 +4,8 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,6 +16,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -24,7 +27,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class MyntraTest {
 	@Parameters("Browser")
 	@Test
-	public void myntraTest(String browserName) {
+	public void myntraTest(@Optional("firefox") String browserName) {
 		System.out.println("browser name is " + browserName);
 		WebDriver driver = null;
 
@@ -66,7 +69,8 @@ public class MyntraTest {
 		actions.moveToElement(brandH).click().build().perform();
 		List<WebElement> brandsH = driver.findElements(By.xpath(
 				"//li[@data-item='h' and contains(@class,'FilterDirectory-listTitle')]/following-sibling::li/label/input[starts-with(@value,'H') or starts-with(@value,'h')]"));
-		Uninterruptibles.sleepUninterruptibly(Duration.ofSeconds(3));
+		Uninterruptibles.sleepUninterruptibly(Duration.ofSeconds(5));
+		
 		int items = 0;
 		for (int i = 0; i < brandsH.size(); i++) {
 			String brandName = brandsH.get(i).getAttribute("value").trim();
@@ -75,8 +79,10 @@ public class MyntraTest {
 						.replaceAll("[^0-9]", "");
 				items = items + Integer.parseInt(itemsStr);
 				System.out.println("Total Items Under: " + brandName + " is " + Integer.parseInt(itemsStr));
-				actions.moveToElement(brandsH.get(i)).click().build().perform();
-				Uninterruptibles.sleepUninterruptibly(Duration.ofSeconds(2));
+				WebElement ele = scrollToElement(brandsH.get(i), driver);
+				Uninterruptibles.sleepUninterruptibly(Duration.ofSeconds(1));
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click", ele);
 			}
 		}
 
@@ -84,6 +90,15 @@ public class MyntraTest {
 		
 		Uninterruptibles.sleepUninterruptibly(Duration.ofSeconds(2));
 		driver.quit();
+	}
+	
+	public WebElement scrollToElement(WebElement elementToScroll, WebDriver webDriver) {
+
+		Rectangle rect = elementToScroll.getRect();
+		int deltaY = rect.y + rect.height;
+		new Actions(webDriver).scrollByAmount(0, deltaY).perform();
+		return elementToScroll;
+
 	}
 
 }

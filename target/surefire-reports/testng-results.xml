@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-09T20:27:18 IST" name="Suite" finished-at="2024-03-09T20:28:42 IST" duration-ms="83927">
+  <suite started-at="2024-03-12T13:29:37 IST" name="Suite" finished-at="2024-03-12T13:30:47 IST" duration-ms="69919">
     <groups>
     </groups>
-    <test started-at="2024-03-09T20:27:18 IST" name="Test" finished-at="2024-03-09T20:28:42 IST" duration-ms="83927">
+    <test started-at="2024-03-12T13:29:37 IST" name="Test" finished-at="2024-03-12T13:30:47 IST" duration-ms="69919">
       <class name="tests.MyntraTest">
-        <test-method signature="myntraTest(java.lang.String)[pri:0, instance:tests.MyntraTest@393671df]" started-at="2024-03-09T20:27:18 IST" name="myntraTest" finished-at="2024-03-09T20:28:42 IST" duration-ms="83831" status="PASS">
+        <test-method signature="myntraTest(java.lang.String)[pri:0, instance:tests.MyntraTest@4310d43]" started-at="2024-03-12T13:29:37 IST" name="myntraTest" finished-at="2024-03-12T13:30:47 IST" duration-ms="69815" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Chrome]]>
+                <![CDATA[firefox]]>
               </value>
             </param>
           </params>
