@@ -27,7 +27,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class MyntraTest {
 	@Parameters("Browser")
 	@Test
-	public void myntraTest(@Optional("firefox") String browserName) {
+	public void myntraTest(@Optional("edge") String browserName) {
 		System.out.println("browser name is " + browserName);
 		WebDriver driver = null;
 
@@ -40,8 +40,8 @@ public class MyntraTest {
 			
 			EdgeOptions options = new EdgeOptions();
 			options.addArguments("--disable-notifications");
-			System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"/executables/msedgedriver.exe");
-			//WebDriverManager.edgedriver().setup();
+			//System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"/executables/msedgedriver.exe");
+			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver(options);
 		} else if (browserName.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
