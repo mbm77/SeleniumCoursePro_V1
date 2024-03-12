@@ -34,11 +34,13 @@ public class MyntraTest {
 			options.addArguments("--disable-notifications");
 			driver = new ChromeDriver(options);
 		} else if (browserName.equalsIgnoreCase("edge")) {
+			WebDriverManager.chromedriver().setup();
 			EdgeOptions options = new EdgeOptions();
 			options.addArguments("--disable-notifications");
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver(options);
 		} else if (browserName.equalsIgnoreCase("firefox")) {
+			WebDriverManager.firefoxdriver().setup();
 			FirefoxProfile ffprofile = new FirefoxProfile();
 			ffprofile.setPreference("dom.webnotifications.enabled", false);
 			FirefoxOptions options = new FirefoxOptions();
