@@ -40,8 +40,8 @@ public class MyntraTest {
 			
 			EdgeOptions options = new EdgeOptions();
 			options.addArguments("--disable-notifications");
-			//System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"/executables/msedgedriver.exe");
-			WebDriverManager.edgedriver().setup();
+			System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"/executables/msedgedriver.exe");
+			//WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver(options);
 		} else if (browserName.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
