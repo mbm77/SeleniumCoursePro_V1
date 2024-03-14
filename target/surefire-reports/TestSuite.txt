@@ -1,9 +1,9 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 52.629 s <<< FAILURE! - in TestSuite
-tests.MyntraTest.myntraTest[edge](1)  Time elapsed: 51.201 s  <<< FAILURE!
-java.lang.AssertionError: No of Items mismatched expected [3652] but found [3662]
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 76.12 s <<< FAILURE! - in TestSuite
+tests.MyntraTest.myntraTest[chrome](1)  Time elapsed: 73.431 s  <<< FAILURE!
+java.lang.AssertionError: No of Items mismatched expected [3662] but found [3745]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1577)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:149)

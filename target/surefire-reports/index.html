@@ -103,7 +103,7 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="tests.MyntraTest" class="method navigator-link" hash-for-method="myntraTest(edge)">myntraTest(edge)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="tests.MyntraTest" class="method navigator-link" hash-for-method="myntraTest(chrome)">myntraTest(chrome)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -126,11 +126,11 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="myntraTest(edge)">
-                  </a> <!-- myntraTest(edge) -->
+                  <a name="myntraTest(chrome)">
+                  </a> <!-- myntraTest(chrome) -->
                   <span class="method-name">myntraTest</span>
-                  <span class="parameters">(edge)</span>
-                  <div class="stack-trace">java.lang.AssertionError: No of Items mismatched expected [3652] but found [3662]
+                  <span class="parameters">(chrome)</span>
+                  <div class="stack-trace">java.lang.AssertionError: No of Items mismatched expected [3662] but found [3745]
 	at tests.MyntraTest.myntraTest(MyntraTest.java:92)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 37 stack frames
@@ -195,12 +195,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'myntraTest')
 data.setCell(0, 2, 'tests.MyntraTest')
-data.setCell(0, 3, 51145);
+data.setCell(0, 3, 73388);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 51 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -230,7 +230,7 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">myntraTest(edge)</span>
+                <span class="method-name">myntraTest(chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->

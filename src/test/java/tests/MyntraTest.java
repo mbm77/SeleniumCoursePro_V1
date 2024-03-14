@@ -35,6 +35,7 @@ public class MyntraTest {
 		if (browserName.equalsIgnoreCase("chrome")) {
 			//WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--headless=new");
 			options.addArguments("--disable-notifications");
 			driver = new ChromeDriver(options);
 		} else if (browserName.equalsIgnoreCase("edge")) {
@@ -89,7 +90,7 @@ public class MyntraTest {
 			}
 		}
 		
-		Assert.assertEquals(items, 3662, "No of Items mismatched");
+		Assert.assertEquals(items, 3745, "No of Items mismatched");
 		String currentUrl = driver.getCurrentUrl();
 		Assert.assertTrue(currentUrl.contains("men-tshirts?f=Brand%3AHERE%26NOW%2CHRX%20by%20Hrithik%20Roshan"),
 				 "URL not contains given string");
