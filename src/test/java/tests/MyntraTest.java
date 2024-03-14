@@ -16,6 +16,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -27,7 +28,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class MyntraTest {
 	@Parameters("Browser")
 	@Test
-	public void myntraTest(@Optional("edge") String browserName) {
+	public void myntraTest(@Optional("chrome") String browserName) {
 		System.out.println("browser name is " + browserName);
 		WebDriver driver = null;
 
@@ -39,14 +40,11 @@ public class MyntraTest {
 		} else if (browserName.equalsIgnoreCase("edge")) {
 			
 			EdgeOptions options = new EdgeOptions();
-			options.addArguments("--no-sandbox");
-			options.addArguments("--disable-dev-shm-usage");
-			options.addArguments("--headless");
-			options.addArguments("--crash-dumps-dir=/tmp");
+//			options.addArguments("--headless=new");
+//			options.addArguments("--window-size=1400,600");
 			options.addArguments("--disable-notifications");
-			//options.addArguments("user-data-dir=C:\\Users\\user\\AppData\\Local\\Microsoft\\Edge\\User Data2");
 			//System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"/executables/msedgedriver.exe");
-			WebDriverManager.edgedriver().setup();
+			//WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver(options);
 		} else if (browserName.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
@@ -90,8 +88,11 @@ public class MyntraTest {
 				js.executeScript("arguments[0].click", ele);
 			}
 		}
-
+		
+		Assert.assertEquals(items, 3662, "No of Items mismatched");
 		String currentUrl = driver.getCurrentUrl();
+		Assert.assertTrue(currentUrl.contains("men-tshirts?f=Brand%3AHERE%26NOW%2CHRX%20by%20Hrithik%20Roshan"),
+				 "URL not contains given string");
 		
 		Uninterruptibles.sleepUninterruptibly(Duration.ofSeconds(2));
 		driver.quit();
