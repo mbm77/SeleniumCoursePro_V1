@@ -28,7 +28,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class MyntraTest {
 	@Parameters("Browser")
 	@Test
-	public void myntraTest(@Optional("chrome") String browserName) {
+	public void myntraTest(@Optional("firefox") String browserName) {
 		System.out.println("browser name is " + browserName);
 		WebDriver driver = null;
 
