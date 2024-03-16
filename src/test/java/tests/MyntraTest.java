@@ -36,7 +36,9 @@ public class MyntraTest {
 		if (browserName.equalsIgnoreCase("chrome")) {
 			//WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--no-sandbox");
 			options.addArguments("--headless=new");
+			options.addArguments("--disable-dev-shm-usage");
 			options.addArguments("--disable-notifications");
 			driver = new ChromeDriver(options);
 		} else if (browserName.equalsIgnoreCase("edge")) {
