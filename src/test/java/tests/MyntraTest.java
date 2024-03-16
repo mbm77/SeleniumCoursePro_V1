@@ -35,6 +35,7 @@ public class MyntraTest {
 		WebDriver driver = null;
 
 		if (browserName.equalsIgnoreCase("chrome")) {
+			
 			HashMap<String, Object> chromePrefs = new HashMap<>();
 			chromePrefs.put("profile.default_content_settings.popups", 0);
 			ChromeOptions options = new ChromeOptions();
@@ -43,7 +44,6 @@ public class MyntraTest {
 			options.addArguments("--headless"); //should be enabled for Jenkins
 			options.addArguments("--disable-dev-shm-usage"); //should be enabled for Jenkins
 			options.addArguments("--window-size=1920x1080"); //should be enabled for Jenkins
-			driver = new ChromeDriver(options);
 			driver = new ChromeDriver(options);
 		} else if (browserName.equalsIgnoreCase("edge")) {
 			
