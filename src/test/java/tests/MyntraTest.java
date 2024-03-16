@@ -30,7 +30,7 @@ public class MyntraTest {
 	@Test
 	public void myntraTest(@Optional("chrome") String browserName) {
 		System.out.println("browser name is " + browserName);
-		
+		System.out.println("browser name is " + browserName);
 		WebDriver driver = null;
 
 		if (browserName.equalsIgnoreCase("chrome")) {
