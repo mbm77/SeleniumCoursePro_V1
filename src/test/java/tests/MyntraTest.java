@@ -1,6 +1,7 @@
 package tests;
 
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -34,12 +35,15 @@ public class MyntraTest {
 		WebDriver driver = null;
 
 		if (browserName.equalsIgnoreCase("chrome")) {
-			//WebDriverManager.chromedriver().setup();
+			HashMap<String, Object> chromePrefs = new HashMap<>();
+			chromePrefs.put("profile.default_content_settings.popups", 0);
 			ChromeOptions options = new ChromeOptions();
+			options.setExperimentalOption("prefs", chromePrefs);
 			options.addArguments("--no-sandbox");
-			options.addArguments("--headless=new");
-			options.addArguments("--disable-dev-shm-usage");
-			options.addArguments("--disable-notifications");
+			options.addArguments("--headless"); //should be enabled for Jenkins
+			options.addArguments("--disable-dev-shm-usage"); //should be enabled for Jenkins
+			options.addArguments("--window-size=1920x1080"); //should be enabled for Jenkins
+			driver = new ChromeDriver(options);
 			driver = new ChromeDriver(options);
 		} else if (browserName.equalsIgnoreCase("edge")) {
 			
