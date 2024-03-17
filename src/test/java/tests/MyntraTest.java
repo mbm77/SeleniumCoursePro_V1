@@ -41,10 +41,11 @@ public class MyntraTest {
 			ChromeOptions options = new ChromeOptions();
 			//options.setExperimentalOption("prefs", chromePrefs);
 			options.addArguments("--no-sandbox");
+			options.addArguments("--headless"); //should be enabled for Jenkins
 			options.addArguments("--disable-dev-shm-usage");
 			options.addArguments("--ignore-ssl-errors=yes");
 			options.addArguments("--ignore-certificate-errors");
-			options.addArguments("--headless"); //should be enabled for Jenkins
+			
 			options.addArguments("--window-size=1920x1080"); //should be enabled for Jenkins
 			//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/executables/chromedriver");
 			driver = new ChromeDriver(options);
